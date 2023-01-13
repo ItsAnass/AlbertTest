@@ -36,7 +36,7 @@ namespace Albert.BackendChallenge.Controllers
 
             return Ok(await _productRepository.CreatProduct(product));
         }
-        [Authorize]
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {

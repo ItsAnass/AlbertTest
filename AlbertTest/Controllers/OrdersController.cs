@@ -58,18 +58,6 @@ namespace Albert.BackendChallenge.Controllers
 
         //}
 
-        //[Authorize]
-        //[HttpGet("getUser")]
-        //public async Task<CurrentUserDto> GetCurrentUser()
-        //{
-        //    var user = await _userManager.FindByNameAsync(_userAccessor.GetCurrentUser());
-
-        //    return new CurrentUserDto
-        //    {
-        //        Email = user.Email,
-        //        Id = user.Id,
-        //        FirstName = user.FirstName,
-        //    };
-        //}
+       
     }
 }

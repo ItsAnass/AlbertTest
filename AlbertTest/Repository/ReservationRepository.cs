@@ -41,8 +41,7 @@ namespace Albert.BackendChallenge.Repository
                     ProductId = product.Id,
                     UserId= user.Id
                                       
-                };
-               
+                };              
                 await CreatReservation(reservation);
                 return true;
             }
