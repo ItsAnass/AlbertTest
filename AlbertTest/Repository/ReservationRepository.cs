@@ -41,7 +41,7 @@ namespace Albert.BackendChallenge.Repository
         public async Task<Reservation> CreatReservation(Reservation reservation)
         {
            
-             _db.Reservation.Add(reservation);
+            _db.Reservation.Add(reservation);
             await _db.SaveChangesAsync();
            
             return await _dbSet.FirstOrDefaultAsync(x => x.Id == reservation.Id);
