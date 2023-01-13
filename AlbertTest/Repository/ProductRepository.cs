@@ -11,6 +11,7 @@ namespace Albert.BackendChallenge.Repository
         private readonly ApplicationDbContext _db;
         private IQueryable<Product> _dbSet;
 
+
         public ProductRepository(ApplicationDbContext db) 
         {
             _db = db;

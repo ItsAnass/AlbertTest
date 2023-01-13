@@ -1,6 +1,9 @@
 ﻿using Albert.BackendChallenge.Entities;
 using Albert.BackendChallenge.Entities.ApplicationDbContext;
 using Albert.BackendChallenge.Repository.IRepository;
+using AlbertTest.Entities.Identity;
+using AlbertTest.Interface;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Albert.BackendChallenge.Repository
@@ -10,12 +13,17 @@ namespace Albert.BackendChallenge.Repository
 
         private readonly ApplicationDbContext _db;
         private IQueryable<Reservation> _dbSet;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IUserAccessor _userAccessor;
 
-        public ReservationRepository(ApplicationDbContext db) 
+        public ReservationRepository(ApplicationDbContext db, UserManager<AppUser> user, IUserAccessor userAccessor ) 
         {
             _db = db;
             _dbSet = db.Reservation.AsQueryable()
                 .Include(x => x.Product);
+
+            _userAccessor = userAccessor;
+            _userManager  = user;
 
             
         }
@@ -24,11 +32,15 @@ namespace Albert.BackendChallenge.Repository
         {
             if (amount > product.Stock)
             {
+                var user = await _userManager.FindByNameAsync(_userAccessor.GetCurrentUser());
+
                 Reservation reservation = new Reservation()
                 {
                     Amount= amount,
                     CreatedAt= DateTime.Now,
-                    ProductId = product.Id
+                    ProductId = product.Id,
+                    UserId= user.Id
+                                      
                 };
                
                 await CreatReservation(reservation);

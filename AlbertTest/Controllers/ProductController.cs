@@ -4,6 +4,7 @@ using Albert.BackendChallenge.Contracts;
 using Albert.BackendChallenge.Entities;
 using Albert.BackendChallenge.Repository;
 using Albert.BackendChallenge.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Albert.BackendChallenge.Controllers
@@ -35,7 +36,7 @@ namespace Albert.BackendChallenge.Controllers
 
             return Ok(await _productRepository.CreatProduct(product));
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
