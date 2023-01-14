@@ -14,7 +14,7 @@ namespace Albert.BackendChallenge.Repository.IRepository
         Task<Product> CreatProduct(Product product);
         Task<Product> RemoveItemsFromStock(int id, int items);
         Task<Product> AddItemsToStock(int id, int items);
-        Task<bool> DeleteProduct(int id);
+        //Task<bool> DeleteProduct(int id);
 
     }
 }

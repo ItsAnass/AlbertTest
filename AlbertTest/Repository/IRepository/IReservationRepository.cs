@@ -12,7 +12,7 @@ namespace Albert.BackendChallenge.Repository.IRepository
         Task<Reservation> GetReservationById(int id);
         Task<IReadOnlyList<Reservation>> GetAllReservations();
         Task<Reservation> CreatReservation(Reservation product);
-        Task<bool> Delete(int id);
+        //Task<bool> Delete(int id);
         Task<bool> CheckQuantity(Product produc ,int amount);
 
     }

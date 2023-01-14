@@ -22,19 +22,19 @@ namespace Albert.BackendChallenge.Controllers
 
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
-        {           
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetById(int id)
+        //{           
 
-            return Ok(await _reservationRepository.GetReservationById(id));
-        }
+        //    return Ok(await _reservationRepository.GetReservationById(id));
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Reservation reservation)
-        {
+        //[HttpPost]
+        //public async Task<IActionResult> Create([FromBody] Reservation reservation)
+        //{
 
-            return Ok(await _reservationRepository.CreatReservation(reservation));
-        }
+        //    return Ok(await _reservationRepository.CreatReservation(reservation));
+        //}
 
         [HttpGet]
         public async Task<IActionResult> GetAll()

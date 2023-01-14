@@ -59,16 +59,16 @@ namespace Albert.BackendChallenge.Repository
               
         }
 
-        public async Task<bool> Delete(int id)
-        {
-            var reservation = await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
+        //public async Task<bool> Delete(int id)
+        //{
+        //    var reservation = await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (reservation == null) return false;
+        //    if (reservation == null) return false;
 
-            _db.Remove(reservation);
+        //    _db.Remove(reservation);
 
-            return await _db.SaveChangesAsync() > 0;
-        }
+        //    return await _db.SaveChangesAsync() > 0;
+        //}
 
         public async Task<IReadOnlyList<Reservation>> GetAllReservations()
         {

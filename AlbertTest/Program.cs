@@ -1,6 +1,7 @@
 using Albert.BackendChallenge.Entities.ApplicationDbContext;
 using Albert.BackendChallenge.Repository;
 using Albert.BackendChallenge.Repository.IRepository;
+using Albert.BackendChallenge.Services;
 using AlbertTest.Entities.ApplicationDbContext;
 using AlbertTest.Entities.Identity;
 using AlbertTest.Extensions;
@@ -8,6 +9,7 @@ using AlbertTest.Interface;
 using AlbertTest.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -75,6 +77,10 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
 builder.Services.AddScoped<IUserAccessor, UserAccessor>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+
+
+
 var app = builder.Build();
 
 var scope = app.Services.CreateAsyncScope();

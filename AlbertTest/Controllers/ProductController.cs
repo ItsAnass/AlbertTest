@@ -23,19 +23,19 @@ namespace Albert.BackendChallenge.Controllers
 
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
-        {           
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetById(int id)
+        //{           
 
-            return Ok(await _productRepository.GetProductById(id));
-        }
+        //    return Ok(await _productRepository.GetProductById(id));
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Product product)
-        {
+        //[HttpPost]
+        //public async Task<IActionResult> Create([FromBody] Product product)
+        //{
 
-            return Ok(await _productRepository.CreatProduct(product));
-        }
+        //    return Ok(await _productRepository.CreatProduct(product));
+        //}
         
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -43,6 +43,14 @@ namespace Albert.BackendChallenge.Controllers
             var product = await _productRepository.GetAllProducts();
 
             return Ok(product);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Add(int id, int amount)
+        {
+
+            return Ok(await _productRepository.AddItemsToStock( id, amount));
         }
     }
 
