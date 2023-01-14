@@ -4,6 +4,7 @@ namespace AlbertTest.Entities.Identity
 {
     public class AppIdentityDbContextSeed
     {
+        //I am seeding the database with a user in case the database was empty
         public static async Task SeedUserAsync(UserManager<AppUser> userManger)
         {
             if (!userManger.Users.Any())

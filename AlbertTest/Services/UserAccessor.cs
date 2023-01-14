@@ -5,6 +5,9 @@ namespace AlbertTest.Services
 {
     public class UserAccessor : IUserAccessor
     {
+
+        //Accessing HttpContext in order to get the current details of the loged in USER from his generated token :)
+
         private readonly IHttpContextAccessor _httpContextAccessor;
         public UserAccessor(IHttpContextAccessor httpContextAccessor)
         {

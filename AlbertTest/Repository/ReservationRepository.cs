@@ -28,6 +28,8 @@ namespace Albert.BackendChallenge.Repository
             
         }
 
+        //This method checks if the order request is greater than the available stock, so it will create a reservation for the loged in user
+
         public async Task<bool> CheckQuantity(Product product ,int amount)
         {
             if (amount > product.Stock)

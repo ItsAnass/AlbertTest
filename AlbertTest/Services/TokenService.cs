@@ -9,6 +9,9 @@ namespace AlbertTest.Services
 {
     public class TokenService : ITokenService
     {
+
+        //Token implementation and configuration
+
         private readonly IConfiguration _config;
         private readonly SymmetricSecurityKey _key;
         public TokenService(IConfiguration config)

@@ -70,6 +70,7 @@ namespace Albert.BackendChallenge.Repository
 
         }
 
+        //This method will send notification emails to those who are saved in the reservation table. When additional stock is added the method will check the id of the product and match it with the saved data in the reservation table and get the user details and send a notification to him/her  
         public async Task<Product> AddItemsToStock(int id, int items)
         {
             var product = await _db.Product.FindAsync(id);

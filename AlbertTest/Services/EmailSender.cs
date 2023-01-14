@@ -9,6 +9,7 @@ namespace Albert.BackendChallenge.Services
 {
     public class EmailSender : IEmailSender
     {
+        //Email implementation using G-mail SMTP
         public Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
             var emailToSend = new MimeMessage();
