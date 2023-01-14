@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Albert.BackendChallenge.Controllers
 {
-    
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class OrdersController : ControllerBase
