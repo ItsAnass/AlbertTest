@@ -29,6 +29,13 @@ namespace Albert.BackendChallenge.Repository
 
 
         }
+        public ProductRepository(ApplicationDbContext db)
+        {
+            _db = db;
+           
+
+
+        }
 
         public async Task<Product> CreatProduct(Product product)
         {
